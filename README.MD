@@ -14,12 +14,12 @@ Você pode alterar o arquivo **docker-compose.yml** e [adicionar volumes](https:
 Exemplo:
 ```yml
 server:
-	build: ./back/
-	command: yarn start
-	ports:
-		- "3003:3003"
-	volumes:
-      - back:/usr/server
+  build: ./back/
+  command: yarn start
+  ports:
+    - "3003:3003"
+  volumes:
+    - back:/usr/server
 ```
 Assim toda alteração na pasta `back` irá para a pasta `/usr/server` do containter (Lembre-se: caso você não queira que uma pasta seja adicionada, coloque ela no arquivo `.dockerignore`)
 
@@ -28,12 +28,12 @@ Você não precisa guardar suas variáveis de ambiente num arquivo .env quando e
 Exemplo:
 ```yml
 server:
-	build: ./back/
-	command: yarn start
-	ports:
-		- "3003:3003"
-	evoriment:
-		- JWT_TOKEN=TOKEN
+  build: ./back/
+  command: yarn start
+  ports:
+    - "3003:3003"
+  evoriment:
+    - JWT_TOKEN=TOKEN
 ```
 [Leia mais](https://docs.docker.com/compose/environment-variables/#set-environment-variables-in-containers)
 
